@@ -6,12 +6,20 @@ con = c.connect(host = 'localhost',
 
 cursor = con.cursor()
 
-# name & age ask from user and try to insert it to database .
-name = input("Enter the name")
-age =  int(input("age batao bhai"))
 
-query = "insert into user values ('{}',{} )".format(name,age)
-cursor.execute(query)
-con.commit()
+while True:
+    # name & age ask from user and try to insert it to database .
+    name = input("Enter the name")
+    age =  int(input("age batao bhai"))
 
-print("Data enetered successfully!!")
+    query = "insert into user values ('{}',{} )".format(name,age)
+    cursor.execute(query)
+    con.commit()
+
+    print("Data enetered successfully!!")
+
+    choice = input("2.Exit")
+    if choice == '2':
+        break
+
+
